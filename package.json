@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
@@ -15,5 +15,8 @@
     "multer": "^1.4.4",
     "nodemon": "^2.0.15"
   },
-  "description": ""
+  "description": "",
+  "engines": {
+    "node": "14.x"
+  }
 }
