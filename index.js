@@ -17,7 +17,7 @@ const fileRoutes = require('./routes/fileupload');
 /// routes 
 app.use('/api', fileRoutes);
 
-app.use('/',()=>{
+app.use('/',(req, res)=>{
     res.status(200).send('hello world from backend');
 })
 
