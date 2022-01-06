@@ -1,6 +1,7 @@
 'use strict';
 const  multer  = require('multer');
 const path = require('path');
+const cloudinary = require('cloudinary');
 
 
 const storage = multer.diskStorage({
@@ -24,5 +25,20 @@ const fileFilter = (req, file, cb) => {
 }
 
 const uploads = multer({storage : storage, fileFilter : fileFilter})
+
+
+// upload image here
+cloudinary.uploader.upload(data.image)
+.then((result) => {
+  response.status(200).send({
+    message: "success",
+    result,
+  });
+}).catch((error) => {
+  response.status(500).send({
+    message: "failure",
+    error,
+  });
+})
 
 module.exports  = {uploads};
